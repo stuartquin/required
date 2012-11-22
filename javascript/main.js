@@ -22,7 +22,6 @@
   });
 
   define(["jquery", "router"], function($, Router) {
-    console.log("Initialise router");
     return Router.initialize();
   });
 

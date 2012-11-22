@@ -16,9 +16,7 @@ require.config
     underscore:
       exports: "_"
 
-
 define [ "jquery", "router" ],
 ($, Router) ->
   # This is the entry point for the client code
-  console.log "Initialise router"
   Router.initialize()

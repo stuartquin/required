@@ -10,7 +10,7 @@ define ["jquery", "underscore", "backbone", "views/home"],
       home_view.render()
 
     test: () ->
-      console.log "T-t-t-test!!"
+      console.log "test"
 
   initialize: () ->
     app_router = new AppRouter()

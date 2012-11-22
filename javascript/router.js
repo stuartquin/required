@@ -14,7 +14,7 @@
         return home_view.render();
       },
       test: function() {
-        return console.log("T-t-t-test!!");
+        return console.log("test");
       }
     });
     return {
