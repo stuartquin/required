@@ -1,18 +1,16 @@
 define [ "jquery",
          "underscore",
          "backbone",
-         "collections/quotes",
          "text!/javascript/templates/home.html"
 ],
-( $, _, Backbone, QuotesCollection, HomeTemplate) ->
+( $, _, Backbone, HomeTemplate) ->
   HomeView = Backbone.View.extend
     el:       "#main",
     template: _.template HomeTemplate
 
-    initialize: (options) ->
-      console.log "../models/quote"
-      @quotes_collection = new QuotesCollection()
-      @quotes_collection.fetch()
+    initialize: ( options ) ->
+      @collection = options.collection
+      @collection.bind "reset", @render, this
 
     render: () ->
       $( @el ).html @template

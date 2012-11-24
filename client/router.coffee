@@ -1,13 +1,19 @@
-define ["jquery", "underscore", "backbone", "views/home"],
-( $, _, Backbone, HomeView ) ->
+define ["jquery",
+        "underscore",
+        "backbone",
+        "collections/quotes",
+        "views/home"
+],
+( $, _, Backbone, QuotesCollection, HomeView ) ->
   AppRouter = Backbone.Router.extend
     routes:
       "home":     "home"
       "test":     "test"
 
     home: () ->
-      home_view = new HomeView()
-      home_view.render()
+      quotes_collection = new QuotesCollection()
+      quotes_collection.fetch()
+      home_view = new HomeView( collection: quotes_collection )
 
     test: () ->
       console.log "test"

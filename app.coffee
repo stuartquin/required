@@ -20,7 +20,6 @@ class exports.App
 
   quotes: ( req, res ) =>
     console.log req.query
-
     res.send @read_file "quotes.txt"
 
   read_file: ( filename, cb ) ->
